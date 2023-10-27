@@ -1,21 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input'); /*seachEl안에서 input요소를 찾는다*/
-
-searchEl.addEventListener('click', function() {
-  searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function() {
-  searchEl.classList.add('focused') /*클래스 명이 추가 됨 -> focus focused*/
-  searchInputEl.setAttribute('placeholder' , '통합검색') /*setAttribute html속성으 지정할 때 씀*/
-});
-
-searchInputEl.addEventListener('blur', function() { /*blur는 포커스가 해제됬을 때*/
-  searchEl.classList.remove('focused') /*클래스 명이 추가 됨 -> focus focused*/
-  searchInputEl.setAttribute('placeholder' , '') /*setAttribute html속성으 지정할 때 씀*/
-});
-
-
 const badgeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
 // _.throttle(함수,시간)
@@ -157,9 +139,5 @@ spyEls.forEach(function(spyEl) {
     .setClassToggle(spyEl,'show') //클래스를 토글할 요소, 토글할 클래스 이름(드래그하다가 해당 클래스에 show라는 이름이 추가됨)
     .addTo(new ScrollMagic.Controller())// 추가한 옵션을 내부의 컨트롤러에 할당해서 동작할 수 있게 하는 용도
 });
-
-
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); //현재년도
 
 
